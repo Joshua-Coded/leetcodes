@@ -9,16 +9,15 @@ Merge two sorted linked lists and return it as a new list. The new list should b
 
 
 class Solution(object):
-    def mergeTwoLits(self, l1, l2):
+    def mergeTwoList(self, l1, l2):
         """
         :type l1: ListNode
         :type l2: ListNode
         :rtype: ListNode
         """
-        
+
         if l1 == None and l2 == None:
             return None
-
         elif l1 != None and l2 == None:
             return l1
         elif l2 != None and l1 == None:
@@ -27,8 +26,7 @@ class Solution(object):
             dummy = ListNode(0)
             p = dummy
 
-
-            while l1 != None and  l2 != None:
+            while l1 != None and l2 != None:
                 if l1.val < l2.val:
                     p.next = l1
                     l1 = l1.next
@@ -40,8 +38,12 @@ class Solution(object):
             if l1 != None:
                 p.next = l1
 
-            if l2 != None:
-                p.next = L2
+                if l2 != None:
+                    p.next = l2
 
-            return dummy.next
-        
+                return dummy.next
+
+                
+            
+           
+    
